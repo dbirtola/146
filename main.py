@@ -7,10 +7,22 @@ import random
 import shutil
 import time
 import math
+from behavior_tree_bot.behaviors import *
+from behavior_tree_bot.checks import *
+from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check
 
+
+
+node_dict = {
+    "-": Selector,
+    "_": Sequence,
+    "1": if_neutral_planet_available,
+    "2": have_largest_fleet,
+    "a": attack_weakest_enemy_planet,
+    "b": spread_to_weakest_neutral_planet
+}
 
 # The level as a grid of tiles
-
 
 class Individual_Grid(object):
     __slots__ = ["genome", "_fitness"]
@@ -21,8 +33,14 @@ class Individual_Grid(object):
 
     # Update this individual's estimate of its fitness.
     # This can be expensive so we do it once and then cache the result.
+
+
+
     def calculate_fitness(self):
-        measurements = metrics.metrics(self.to_level())
+
+
+
+        #measurements = metrics.metrics(self.to_level())
         # Print out the possible measurements or look at the implementation of metrics.py for other keys:
         # print(measurements.keys())
         # Default fitness function: Just some arbitrary combination of a few criteria.  Is it good?  Who knows?
@@ -41,7 +59,7 @@ class Individual_Grid(object):
         ##  -Damen
         #####################################################################
 
-
+        """
         coefficients = dict(
             meaningfulJumpVariance=0.5,
             negativeSpace=0.6,
@@ -53,6 +71,7 @@ class Individual_Grid(object):
 
         self._fitness = sum(map(lambda m: coefficients[m] * measurements[m],
                                 coefficients))
+        """
         return self
 
     # Return the cached fitness value or calculate it as needed.
@@ -265,6 +284,8 @@ def ga():
 
 
 if __name__ == "__main__":
+
+
     final_gen = sorted(ga(), key=Individual.fitness, reverse=True)
     best = final_gen[0]
     print("Best fitness: " + str(best.fitness()))
