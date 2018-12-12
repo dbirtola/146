@@ -7,6 +7,7 @@ import random
 import shutil
 import time
 import math
+import run
 from behavior_tree_bot.behaviors import *
 from behavior_tree_bot.checks import *
 from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check
@@ -16,11 +17,43 @@ from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check
 node_dict = {
     "-": Selector,
     "_": Sequence,
-    "1": if_neutral_planet_available,
-    "2": have_largest_fleet,
+    "A": if_neutral_planet_available,
+    "B": have_largest_fleet,
     "a": attack_weakest_enemy_planet,
     "b": spread_to_weakest_neutral_planet
 }
+
+
+
+def get_node_string(node):
+    node_string = ""
+
+    if isinstance(node, Selector):
+        node_string += "-["
+        #code to add children values
+        for child in node.child_nodes:
+            node_string += get_node_string(child)
+        node_string += "]"
+
+        return node_string
+
+    if isinstance(node, Sequence):
+        node_string += "_["
+        #code to add children values        
+        for child in node.child_nodes:
+            node_string += get_node_string(child)
+
+        node_string += "]"
+        return node_string
+
+    if isinstance(node, Action):
+        return next((symbol for symbol, n in node_dict.items() if n == node.action_function))
+
+    if isinstance(node, Check):
+        return next((symbol for symbol, n in node_dict.items() if n == node.check_function))
+
+
+
 
 # The level as a grid of tiles
 
@@ -38,7 +71,14 @@ class Individual_Grid(object):
 
     def calculate_fitness(self):
 
-
+        tree = self.genome
+        tree_string = get_node_string(tree)
+        #print("Tree was turned into: ", tree_string)
+        with open("behavior_tree_bot/tree.txt", "w") as file:
+            file.write(tree_string)
+        results = run.run_test()
+        #print("Results: ", results)
+        self._fitness = 1 + results['wins']
 
         #measurements = metrics.metrics(self.to_level())
         # Print out the possible measurements or look at the implementation of metrics.py for other keys:
@@ -110,10 +150,58 @@ class Individual_Grid(object):
 
     # Create zero or more children from self and other
     def generate_children(self, other):
-        new_genome = copy.deepcopy(self.genome)
-        # Leaving first and last columns alone...
-        # do crossover with other
+        new_genome1 = copy.deepcopy(self.genome)
+        new_genome2 = copy.deepcopy(other.genome)
 
+        def tree_to_list(tree_list, node):
+
+            current_node = node
+
+            #Don't add the root, for now
+            if current_node.parent_node != None:
+                tree_list.append(current_node)
+
+            if(isinstance(node, Sequence) or isinstance(node, Selector)):
+
+                if len(current_node.child_nodes) > 0:
+                    for node in current_node.child_nodes:
+                        tree_to_list(tree_list, node)
+
+
+        tree_as_list = []
+        tree_to_list(tree_as_list, new_genome1)
+        """
+        print("\nGenerated tree list of self as: ")
+        for node in tree_as_list:
+            print(str(node))
+        """
+        other_as_list = []
+        tree_to_list(other_as_list, new_genome2)
+        """
+        print("\nGenerated tree list of other as: ")
+        for node in other_as_list:
+            print(str(node))
+        """
+        random_node = random.choice(tree_as_list)
+        other_node = random.choice(other_as_list)
+
+
+        random_node_parent = random_node.parent_node
+        other_node_parent = other_node.parent_node
+
+        random_node_index = random_node_parent.child_nodes.index(random_node)
+        other_node_index = other_node_parent.child_nodes.index(other_node)
+
+        #print("Removing : " + str(random_node) + " from " + str(random_node_parent))
+        random_node_parent.child_nodes.remove(random_node)
+        random_node_parent.child_nodes.insert(random_node_index, other_node)
+
+        other_node_parent.child_nodes.remove(other_node)
+        other_node_parent.child_nodes.insert(other_node_index, random_node)
+
+
+        #print("Generated new genome1 : " + new_genome1.tree_to_string())
+        #print("Generated new genome2 : " + new_genome2.tree_to_string())
 
         #####################################################################
         ##                            TODO                             
@@ -123,45 +211,95 @@ class Individual_Grid(object):
         #####################################################################
 
 
-        left = 1
-        right = width - 1
-        for y in range(height):
-            for x in range(left, right):
-                # STUDENT Which one should you take?  Self, or other?  Why?
-                # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-                pass
-        # do mutation; note we're returning a one-element tuple here
-        return (Individual_Grid(new_genome),)
+        return (Individual_Grid(new_genome1),Individual_Grid(new_genome2))
 
     # Turn the genome into a level string (easy for this genome)
-    def to_level(self):
+    def to_tree(self):
         return self.genome
 
     # These both start with every floor tile filled with Xs
     # STUDENT Feel free to change these
     @classmethod
     def empty_individual(cls):
-        g = [["-" for col in range(width)] for row in range(height)]
-        g[15][:] = ["X"] * width
-        g[14][0] = "m"
-        g[7][-1] = "v"
-        for col in range(8, 14):
-            g[col][-1] = "f"
-        for col in range(14, 16):
-            g[col][-1] = "X"
-        return cls(g)
+        
+        # Top-down construction of behavior tree
+        root = Selector(name='High Level Ordering of Strategies')
+        
+        offensive_plan = Sequence(name='Offensive Strategy')
+        largest_fleet_check = Check(have_largest_fleet)
+        attack = Action(attack_weakest_enemy_planet)
+        offensive_plan.child_nodes = [largest_fleet_check, attack]
+
+        for node in offensive_plan.child_nodes:
+            node.parent_node = offensive_plan
+
+        spread_sequence = Sequence(name='Spread Strategy')
+        neutral_planet_check = Check(if_neutral_planet_available)
+        spread_action = Action(spread_to_weakest_neutral_planet)
+        spread_sequence.child_nodes = [neutral_planet_check, spread_action]
+
+        for node in spread_sequence.child_nodes:
+            node.parent_node = spread_sequence
+
+        root.child_nodes = [offensive_plan, spread_sequence, attack.copy()]
+
+        for node in root.child_nodes:
+            node.parent_node = root
+
+        root.parent_node = None
+        
+
+        #root = Selector(name = 'High Level Ordering of Strategies')
+        return cls(root)
 
     @classmethod
     def random_individual(cls):
-        # STUDENT consider putting more constraints on this to prevent pipes in the air, etc
-        # STUDENT also consider weighting the different tile types so it's not uniformly random
-        g = [random.choices(options, k=width) for row in range(height)]
-        g[15][:] = ["X"] * width
-        g[14][0] = "m"
-        g[7][-1] = "v"
-        g[8:14][-1] = ["f"] * 6
-        g[14:16][-1] = ["X", "X"]
+        root = Selector(name='High Level Ordering of Strategies')
+        g = generate_tree(root)
+
+        #print("test")
+
+
         return cls(g)
+
+def generate_tree(root):
+    num_children = random.randint(2, 4)
+    while True:
+        new_class = random.choice(list(node_dict.items()))
+
+        if new_class[1] == Selector:
+            if random.randint(0, 10) < 8:
+                continue;
+            new_node = Selector(name = "Selector")
+            new_node.child_nodes = []
+            new_root = generate_tree(new_node)
+            new_root.parent_node = root
+            root.child_nodes.append(new_root)
+
+        elif new_class[1] == Sequence:            
+            if random.randint(0, 10) < 8:
+                continue;
+            new_node = Sequence(name = "Sequence")
+            new_node.child_nodes = []
+            new_root = generate_tree(new_node)
+            new_root.parent_node = root
+            root.child_nodes.append(new_root)
+
+        elif new_class[0].isupper():
+            new_node = Check(new_class[1])
+            new_node.parent_node = root
+            root.child_nodes.append(new_node)
+
+        elif new_class[0].islower():
+            new_node = Action(new_class[1])
+            new_node.parent_node = root
+            root.child_nodes.append(new_node)
+
+        if num_children > 0:
+            num_children -= 1
+        if num_children <= 0:
+            break
+    return root
 
 
 def offset_by_upto(val, variance, min=None, max=None):
@@ -197,13 +335,17 @@ def generate_successors(population):
     ##  -Damen
     #####################################################################
 
+    sorted_pop = sorted(population, key=lambda p: p.fitness())
 
-    return population
+    continuing_pop = sorted_pop[len(sorted_pop)//2:]
+
+    print("Highest successor had fitness: " + str(continuing_pop[-1].fitness()))
+    return continuing_pop
 
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 480
+    pop_limit = 128
 
     # Code to parallelize some computations
     batches = os.cpu_count()
@@ -215,7 +357,7 @@ def ga():
         init_time = time.time()
 
         # STUDENT (Optional) change population initialization
-        population = [Individual.random_individual() if random.random() < 0.9
+        population = [Individual.random_individual() if random.random() < 0.8
                       else Individual.empty_individual()
                       for _g in range(pop_limit)]
 
@@ -230,7 +372,8 @@ def ga():
         now = start
         print("Use ctrl-c to terminate this loop manually.")
         try:
-            while True:
+            while True:                
+                #input("\nReady for next gen?: \n")
                 now = time.time()
                 # Print out statistics
                 if generation > 0:
@@ -258,8 +401,9 @@ def ga():
 
                 generation += 1
 
+
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 10)
+                stop_condition = (generation > 5)
                 if stop_condition:
                     break
 
@@ -277,6 +421,7 @@ def ga():
                 print("Calculated fitnesses in:", popdone - gendone, "seconds")
                 population = next_population
 
+
         except KeyboardInterrupt:
             pass
 
@@ -286,9 +431,33 @@ def ga():
 if __name__ == "__main__":
 
 
+    #Remember, the extra selector being added when encoding/decoding may not be given a parent_node.
+    #All nodes need to have a parent_node, and the root should have it set to None
+    """
+    p1 = Individual.empty_individual()
+    p2 = Individual.empty_individual()
+
+    c1, c2 = p1.generate_children(p2)
+
+    print("Parent1: " + p1.to_tree().tree_to_string())
+    print("Parent2: " + p2.to_tree().tree_to_string())
+
+    print("Child1: " + c1.to_tree().tree_to_string())
+    print("Child2: " + c2.to_tree().tree_to_string())
+
+    print("Test: ", test_indiv.to_tree())
+
+    print("Calculated fitness: ", test_indiv.fitness())
+    input()
+    """
+
     final_gen = sorted(ga(), key=Individual.fitness, reverse=True)
     best = final_gen[0]
     print("Best fitness: " + str(best.fitness()))
+    print("Tree looks like: " + final_gen[0].to_tree().tree_to_string())
+
+
+
     now = time.strftime("%m_%d_%H_%M_%S")
 
     # STUDENT You can change this if you want to blast out the whole generation, or ten random samples, or...

@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 #
 
+
+
+S[AAL[ACAACA]ACC]CCAS[CA]
+
 """
 // There is already a basic strategy in place here. You can use it as a
 // starting point, or you can throw it out entirely and replace it with your
@@ -18,6 +22,7 @@ from behavior_tree_bot.bt_nodes import Selector, Sequence, Action, Check
 
 from planet_wars import PlanetWars, finish_turn
 
+
 node_dict = {
     "-": Selector,
     "_": Sequence,
@@ -27,6 +32,7 @@ node_dict = {
     "b": spread_to_weakest_neutral_planet
 }
 
+
 def parse_tree(tree_string):
 
     root = Selector(name="Root")
@@ -34,19 +40,17 @@ def parse_tree(tree_string):
     #Current node has the current selector or sequence that we are processing
     current_node = root
 
-    for char in tree_string:
+    for char in tree_string[1,-1]:
         if char == "-":
             #Selector
             new_node = Selector(name="Selector")
-            new_node.parent_node = current_node
-            new_node.child_nodes = []
+            new_node.parent = current_node
             current_node.child_nodes.append(new_node)
 
         elif char == "_":
             #Sequence
-            new_node = Sequence(name="Sequence")
-            new_node.parent_node = current_node
-            new_node.child_nodes = []
+            new_node = Selector(name="Sequence")
+            new_node.parent = current_node
             current_node.child_nodes.append(new_node)
 
         elif char == "[":
@@ -59,34 +63,28 @@ def parse_tree(tree_string):
 
         elif char.isupper():
             #Check
-            new_node = Check(node_dict[char])
+            new_node = Check(node_dict(char))
             new_node.parent_node = current_node
             current_node.child_nodes.append(new_node)
 
         elif char.islower():                   
             #Action
-            new_node = Action(node_dict[char])
+            new_node = Action(node_dict(char))
             new_node.parent_node = current_node
             current_node.child_nodes.append(new_node)  
-    logging.info('\n Decoded tree as: ' + root.tree_to_string())
 
     return root   
+
+
+
 
 # You have to improve this tree or create an entire new one that is capable
 # of winning against all the 5 opponent bots
 def setup_behavior_tree():
 
-    #logging.info('\n' + root.tree_to_string())
-    file = open('behavior_tree_bot/tree.txt')
-    root = parse_tree(file.readline())
-    #logging.info('\n Decoded tree as: ' + root2.tree_to_string())
-
-
-
-    """
     # Top-down construction of behavior tree
     root = Selector(name='High Level Ordering of Strategies')
-    
+
     offensive_plan = Sequence(name='Offensive Strategy')
     largest_fleet_check = Check(have_largest_fleet)
     attack = Action(attack_weakest_enemy_planet)
@@ -98,10 +96,8 @@ def setup_behavior_tree():
     spread_sequence.child_nodes = [neutral_planet_check, spread_action]
 
     root.child_nodes = [offensive_plan, spread_sequence, attack.copy()]
-	"""
 
-
-
+    logging.info('\n' + root.tree_to_string())
     return root
 
 # You don't need to change this function
@@ -111,8 +107,18 @@ def do_turn(state):
 if __name__ == '__main__':
     logging.basicConfig(filename=__file__[:-3] + '.log', filemode='w', level=logging.DEBUG)
 
-	
+
+    """
+    file = open("tree.txt", "r")
+    tree_string = file.read()
+    logging.info('\n tree string ' + tree_string)
+
+    """
     behavior_tree = setup_behavior_tree()
+
+
+
+
 
     try:
         map_data = ''
