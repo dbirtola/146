@@ -85,6 +85,7 @@ class Individual_Grid(object):
         tree = self.genome
         tree_string = get_node_string(tree)
         #print("Tree was turned into: ", tree_string)
+        #input("GO ON?!")
         with open("behavior_tree_bot/tree.txt", "w") as file:
             file.write(tree_string)
         results = run.run_test()
@@ -169,14 +170,15 @@ class Individual_Grid(object):
             current_node = node
 
             #Don't add the root, for now
-            if current_node.parent_node != None:
-                tree_list.append(current_node)
+            #if current_node.parent_node != None:
+            
+            tree_list.append(current_node)
 
             if(isinstance(node, Sequence) or isinstance(node, Selector)):
 
                 if len(current_node.child_nodes) > 0:
-                    for node in current_node.child_nodes:
-                        tree_to_list(tree_list, node)
+                    for node2 in current_node.child_nodes:
+                        tree_to_list(tree_list, node2)
 
 
         tree_as_list = []
@@ -193,6 +195,7 @@ class Individual_Grid(object):
         for node in other_as_list:
             print(str(node))
         """
+
         random_node = random.choice(tree_as_list)
         other_node = random.choice(other_as_list)
 
@@ -200,17 +203,33 @@ class Individual_Grid(object):
         random_node_parent = random_node.parent_node
         other_node_parent = other_node.parent_node
 
-        random_node_index = random_node_parent.child_nodes.index(random_node)
-        other_node_index = other_node_parent.child_nodes.index(other_node)
-
-        #print("Removing : " + str(random_node) + " from " + str(random_node_parent))
-        random_node_parent.child_nodes.remove(random_node)
-        random_node_parent.child_nodes.insert(random_node_index, other_node)
-
-        other_node_parent.child_nodes.remove(other_node)
-        other_node_parent.child_nodes.insert(other_node_index, random_node)
 
 
+        if random_node_parent != None:
+            #Insert into the behavior tree
+            random_node_index = random_node_parent.child_nodes.index(random_node)
+
+            random_node_parent.child_nodes.remove(random_node)
+            random_node_parent.child_nodes.insert(random_node_index, other_node)
+            other_node.parent = random_node_parent
+        
+
+
+        if other_node_parent != None:
+            #insert into other behavior tree
+            other_node_index = other_node_parent.child_nodes.index(other_node)
+
+            other_node_parent.child_nodes.remove(other_node)
+            other_node_parent.child_nodes.insert(other_node_index, random_node)
+            random_node.parent = other_node_parent
+
+
+        if random_node_parent == None:
+            new_genome2 = other_node
+            new_genome2.parent_node = None
+        if other_node_parent == None:
+            new_genome1 = random_node
+            new_genome1.parent_node = None
         #print("Generated new genome1 : " + new_genome1.tree_to_string())
         #print("Generated new genome2 : " + new_genome2.tree_to_string())
 
@@ -261,21 +280,31 @@ class Individual_Grid(object):
         """
 
         root = Selector(name = 'High Level Ordering of Strategies')
+        root.child_nodes = []
+        #print("Starting with: " + root.tree_to_string())
+        #input()
+        root.parent_node = None
         return cls(root)
 
     @classmethod
     def random_individual(cls):
-        root = Selector(name='High Level Ordering of Strategies')
+        root = Selector([], name='High Level Ordering of Strategies')
+        root.parent_node = None
+
+        #print("Starting with: " + root.tree_to_string())
         g = generate_tree(root)
 
         #print("test")
 
-
+        #print("Generated random treE: " + g.tree_to_string())
+        #input()
+        #print("Created: " + g.tree_to_string())
         return cls(g)
 
 def generate_tree(root):
     num_children = random.randint(2, 4)
     while True:
+
         new_class = random.choice(list(node_dict.items()))
 
         if new_class[1] == Selector:
@@ -349,14 +378,26 @@ def generate_successors(population):
     sorted_pop = sorted(population, key=lambda p: p.fitness())
 
     continuing_pop = sorted_pop[len(sorted_pop)//2:]
+    new_children = []
+    num_remaining = len(continuing_pop)
+    print("There are : " + str(num_remaining) + " successors")
+    #input()
+    for i in range(0, num_remaining//2):
+        c1, c2 = continuing_pop[random.randint(0, num_remaining-1)].generate_children(continuing_pop[random.randint(0, num_remaining-1)])
+        new_children.append(c1)
+        new_children.append(c2)
 
     print("Highest successor had fitness: " + str(continuing_pop[-1].fitness()))
+    continuing_pop.extend(new_children)
+
+    print("After children : " + str(len(continuing_pop)))
+    #input()
     return continuing_pop
 
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 128
+    pop_limit = 64
 
     # Code to parallelize some computations
     batches = os.cpu_count()
@@ -371,6 +412,15 @@ def ga():
         population = [Individual.random_individual() if random.random() < 0.8
                       else Individual.empty_individual()
                       for _g in range(pop_limit)]
+
+        """
+        print("\n\n Initial Population \n\n")
+
+        for tree in population:
+            print(tree.to_tree().tree_to_string())
+
+        input()
+        """
 
         # But leave this line alone; we have to reassign to population because we get a new population that has more cached stuff in it.
         population = pool.map(Individual.calculate_fitness,
