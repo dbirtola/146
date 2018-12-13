@@ -24,4 +24,30 @@ def currently_attacking_all_planets(state):
     else:
         return True
 
+    
+def have_more_planets_than_enemy(state):
+    return len(state.my_planets()) > len(state.enemy_planets)
+
+
+def have_majority_of_planets(state):
+    return len(state.my_planets) > len(state.not_my_planets)
+
+
+def strongest_planet_close_to_weakest_enemy(state):
+    strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+
+    weakest_enemy_planet = min(target_planets, key=lambda t: t.num_ships, default=None)
+
+    return state.distance(strongest_planet.ID, weakest_enemy_planet.ID) < 7
+
+
+def strongest_planet_almost_too_strong(state):
+    strongest_planet = max(state.my_planets(), key=lambda t: t.num_ships, default=None)
+
+    next_strongest = max(state.my_planets(), key=lambda t: t.num_ships and t != strongest_planet, default=None)
+
+    diff = strongest_planet.num_ships - next_strongest.num_ships
+
+    return diff > 100
+
 
