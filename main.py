@@ -19,10 +19,21 @@ node_dict = {
     "_": Sequence,
     "A": if_neutral_planet_available,
     "B": have_largest_fleet,
+    "C": still_targets_left,
+    "D": currently_attacking_all_planets,
     "a": attack_weakest_enemy_planet,
-    "b": spread_to_weakest_neutral_planet
+    "b": spread_to_weakest_neutral_planet,
+    "c": min_ships_from_my_strongest_planet_to_weakest_enemy,
+    "d": twice_min_ships_from_my_strongest_planet_to_weakest_enemy,
+    "e": half_ships_from_my_strongest_planet_to_weakest_enemy,
+    "f": strongest_planet_spreads_to_weakest_neutral_planet,
+    "g": min_ships_from_strongest_planet_to_nearest_enemy,
+    "h": min_ships_from_strongest_planet_to_nearest_neutral,
+    "i": min_ships_from_strongest_planet_to_nearest_any,
+    "j": twice_min_ships_from_strongest_planet_to_nearest_enemy,
+    "k": twice_min_ships_from_strongest_planet_to_nearest_neutral,
+    "l": twice_min_ships_from_strongest_planet_to_nearest_any
 }
-
 
 
 def get_node_string(node):
@@ -221,7 +232,7 @@ class Individual_Grid(object):
     # STUDENT Feel free to change these
     @classmethod
     def empty_individual(cls):
-        
+        """
         # Top-down construction of behavior tree
         root = Selector(name='High Level Ordering of Strategies')
         
@@ -247,9 +258,9 @@ class Individual_Grid(object):
             node.parent_node = root
 
         root.parent_node = None
-        
+        """
 
-        #root = Selector(name = 'High Level Ordering of Strategies')
+        root = Selector(name = 'High Level Ordering of Strategies')
         return cls(root)
 
     @classmethod
@@ -268,8 +279,8 @@ def generate_tree(root):
         new_class = random.choice(list(node_dict.items()))
 
         if new_class[1] == Selector:
-            if random.randint(0, 10) < 8:
-                continue;
+            #if random.randint(0, 10) < 8:
+            #    continue;
             new_node = Selector(name = "Selector")
             new_node.child_nodes = []
             new_root = generate_tree(new_node)
@@ -277,8 +288,8 @@ def generate_tree(root):
             root.child_nodes.append(new_root)
 
         elif new_class[1] == Sequence:            
-            if random.randint(0, 10) < 8:
-                continue;
+            #if random.randint(0, 10) < 8:
+            #    continue;
             new_node = Sequence(name = "Sequence")
             new_node.child_nodes = []
             new_root = generate_tree(new_node)
@@ -403,7 +414,7 @@ def ga():
 
 
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 5)
+                stop_condition = (generation > 9)
                 if stop_condition:
                     break
 

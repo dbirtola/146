@@ -6,6 +6,11 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:2 3 10.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
 DEBUG:root:Order:2 4 10.0
 DEBUG:root:Finish turn
 
@@ -62,17 +67,16 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:2 4 8.0
-DEBUG:root:Finish turn
-
-DEBUG:root:Finish turn
-
 DEBUG:root:Order:21 10 40.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
 DEBUG:root:Order:2 5 46.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -92,13 +96,10 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Finish turn
-
-DEBUG:root:Finish turn
-
 DEBUG:root:Order:2 11 54.0
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:4 12 54.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -107,12 +108,12 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:21 12 54.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
 DEBUG:root:Order:5 7 64.0
+DEBUG:root:Order:21 13 62.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -123,31 +124,31 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:2 8 64.0
+DEBUG:root:Order:2 14 62.0
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:15 13 62.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:15 8 64.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:4 14 62.0
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:16 17 69.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:11 17 69.0
-DEBUG:root:Order:5 18 69.0
+DEBUG:root:Order:11 18 69.0
 DEBUG:root:Finish turn
 
+DEBUG:root:Order:5 22 76.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -158,7 +159,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:9 22 76.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -167,7 +167,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:2 20 94.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -194,7 +193,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:21 17 25.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -205,7 +203,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:5 3 142.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -222,12 +219,10 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:12 10 170.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:11 22 46.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -238,7 +233,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:2 20 121.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -253,12 +247,10 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:21 12 100.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:14 16 157.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -285,10 +277,8 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:18 10 93.0
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:15 13 195.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -307,10 +297,8 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:11 3 142.0
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:17 1 228.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -319,7 +307,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:5 20 156.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -342,10 +329,8 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:2 13 184.0
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:18 6 180.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -354,7 +339,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:21 1 139.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -377,7 +361,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:11 10 53.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -400,7 +383,6 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:5 6 175.0
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
@@ -435,7 +417,1560 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn
 
-DEBUG:root:Order:14 3 41.0
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
+DEBUG:root:Finish turn
+
 DEBUG:root:Finish turn
 
 DEBUG:root:Finish turn

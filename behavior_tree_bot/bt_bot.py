@@ -23,8 +23,20 @@ node_dict = {
     "_": Sequence,
     "A": if_neutral_planet_available,
     "B": have_largest_fleet,
+    "C": still_targets_left,
+    "D": currently_attacking_all_planets,
     "a": attack_weakest_enemy_planet,
-    "b": spread_to_weakest_neutral_planet
+    "b": spread_to_weakest_neutral_planet,
+    "c": min_ships_from_my_strongest_planet_to_weakest_enemy,
+    "d": twice_min_ships_from_my_strongest_planet_to_weakest_enemy,
+    "e": half_ships_from_my_strongest_planet_to_weakest_enemy,
+    "f": strongest_planet_spreads_to_weakest_neutral_planet,
+    "g": min_ships_from_strongest_planet_to_nearest_enemy,
+    "h": min_ships_from_strongest_planet_to_nearest_neutral,
+    "i": min_ships_from_strongest_planet_to_nearest_any,
+    "j": twice_min_ships_from_strongest_planet_to_nearest_enemy,
+    "k": twice_min_ships_from_strongest_planet_to_nearest_neutral,
+    "l": twice_min_ships_from_strongest_planet_to_nearest_any
 }
 
 def parse_tree(tree_string):

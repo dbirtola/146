@@ -78,10 +78,11 @@ def add_results(r1, r2):
 def run_test():
     path =  os.getcwd()
     opponents = ['opponent_bots/easy_bot.py',
-                 'opponent_bots/spread_bot.py',
-                 'opponent_bots/aggressive_bot.py',
+                 'opponent_bots/spread_bot.py'
+                 #'opponent_bots/aggressive_bot.py',
                  #'opponent_bots/defensive_bot.py',
-                 'opponent_bots/production_bot.py']
+                 #'opponent_bots/production_bot.py'
+                 ]
 
     maps = [71, 13, 24, 56, 7]
 

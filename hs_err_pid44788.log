@@ -1,0 +1,137 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 368648 bytes for Chunk::new
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:390), pid=44788, tid=0x0000f584
+#
+# JRE version:  (8.0_101-b13) (build )
+# Java VM: Java HotSpot(TM) Client VM (25.101-b13 mixed mode windows-x86 )
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0221c400):  JavaThread "Unknown thread" [_thread_in_vm, id=62852, stack(0x00b70000,0x00bc0000)]
+
+Stack: [0x00b70000,0x00bc0000],  sp=0x00bbf894,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x1a985b]
+V  [jvm.dll+0x1a2068]
+V  [jvm.dll+0x8c631]
+V  [jvm.dll+0x8cbd7]
+V  [jvm.dll+0x4b86a]
+V  [jvm.dll+0xa8f20]
+V  [jvm.dll+0x158c24]
+V  [jvm.dll+0x17cecb]
+V  [jvm.dll+0xe6491]
+C  [java.exe+0x14c6]
+C  [java.exe+0x203a]
+C  [java.exe+0xaeaf]
+C  [java.exe+0xaf39]
+C  [KERNEL32.DLL+0x18484]
+C  [ntdll.dll+0x63ab8]
+C  [ntdll.dll+0x63a88]
+C  0x00000000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x0221c400 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=62852, stack(0x00b70000,0x00bc0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00bd0000 - 0x00c03000 	C:\ProgramData\Oracle\Java\javapath\java.exe
+0x772d0000 - 0x77460000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x763f0000 - 0x764d0000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x6dd60000 - 0x6dd71000 	C:\Program Files\AVAST Software\Avast\aswhookx.dll
+0x76620000 - 0x76804000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x73ae0000 - 0x73b7d000 	C:\WINDOWS\SYSTEM32\apphelp.dll
+0x77160000 - 0x771d8000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x758e0000 - 0x7599f000 	C:\WINDOWS\System32\msvcrt.dll
+0x75740000 - 0x75784000 	C:\WINDOWS\System32\sechost.dll
+0x75130000 - 0x751f0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x73b90000 - 0x73bb0000 	C:\WINDOWS\System32\SspiCli.dll
+0x73b80000 - 0x73b8a000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x76a10000 - 0x76a68000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x75bb0000 - 0x75d3d000 	C:\WINDOWS\System32\USER32.dll
+0x75830000 - 0x75847000 	C:\WINDOWS\System32\win32u.dll
+0x763c0000 - 0x763e2000 	C:\WINDOWS\System32\GDI32.dll
+0x74fc0000 - 0x75124000 	C:\WINDOWS\System32\gdi32full.dll
+0x75450000 - 0x754cd000 	C:\WINDOWS\System32\msvcp_win.dll
+0x76820000 - 0x7693e000 	C:\WINDOWS\System32\ucrtbase.dll
+0x693d0000 - 0x695d4000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.471_none_42ebd18244e5251c\COMCTL32.dll
+0x751f0000 - 0x7544c000 	C:\WINDOWS\System32\combase.dll
+0x76940000 - 0x76966000 	C:\WINDOWS\System32\IMM32.DLL
+0x5b1b0000 - 0x5b26f000 	C:\Program Files (x86)\Java\jre1.8.0_101\bin\msvcr100.dll
+0x5ade0000 - 0x5b1ac000 	C:\Program Files (x86)\Java\jre1.8.0_101\bin\client\jvm.dll
+0x76b90000 - 0x76b96000 	C:\WINDOWS\System32\PSAPI.DLL
+0x72db0000 - 0x72db8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x76a80000 - 0x76ae7000 	C:\WINDOWS\System32\WS2_32.dll
+0x737d0000 - 0x737f4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x73780000 - 0x73788000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x734c0000 - 0x734e3000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x76970000 - 0x769a9000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x64b30000 - 0x64b3c000 	C:\Program Files (x86)\Java\jre1.8.0_101\bin\verify.dll
+0x62dd0000 - 0x62df1000 	C:\Program Files (x86)\Java\jre1.8.0_101\bin\java.dll
+0x62db0000 - 0x62dc3000 	C:\Program Files (x86)\Java\jre1.8.0_101\bin\zip.dll
+0x72190000 - 0x72312000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+java_command: tools/PlayGame.jar maps/map13.txt 1000 1000 log.txt python behavior_tree_bot/bt_bot.py python opponent_bots/spread_bot.py
+java_class_path (initial): tools/PlayGame.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Damen\bin;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\Git\cmd;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\PuTTY;C:\Users\Damen\AppData\Local\Programs\Python\Python36-32;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;%SYSTEMROOT%\System32\WindowsPowerShell\v1.0;%SYSTEMROOT%\System32\OpenSSH;C:\Users\Damen\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\Damen\AppData\Local\Programs\Python\Python37-32;C:\Users\Damen\AppData\Local\Microsoft\WindowsApps;C:\Users\Damen\AppData\Local\Programs\Python\Python37-32\lib\site-packages\numpy\.libs;C:\Users\Damen\AppData\Local\Programs\Python\Python37-32\lib\site-packages\numpy\.libs
+USERNAME=Damen
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 94 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 17134 (10.0.17134.1)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 94 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 16735960k(2163572k free), swap 31919140k(5120k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.101-b13) for windows-x86 JRE (1.8.0_101-b13), built on Jun 22 2016 00:45:44 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Dec 12 17:00:24 2018
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
