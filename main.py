@@ -424,7 +424,7 @@ def generate_successors(population):
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 16
+    pop_limit = 32
 
     # Code to parallelize some computations
     batches = os.cpu_count()
@@ -498,7 +498,7 @@ def ga():
 
 
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 4)
+                stop_condition = (generation > 19)
                 if stop_condition:
                     break
 
