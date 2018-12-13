@@ -49,7 +49,7 @@ def test(bot, opponent_bot, map_num):
             #print(opponent_name, 'crashed')
             break
         elif 'Player 1 Wins!' in line:
-            print(bot_name,'wins!')
+            print(bot_name,'wins!------------------------------------------------')
             wins+=1
             break
         elif 'Player 2 Wins!' in line:
@@ -75,19 +75,19 @@ def add_results(r1, r2):
     r1["timed_out"] += r2["timed_out"]
 
 
-def run_test():
+def run_test(show = False):
     path =  os.getcwd()
     opponents = ['opponent_bots/easy_bot.py',
                  'opponent_bots/spread_bot.py'
-                 #'opponent_bots/aggressive_bot.py',
+                 'opponent_bots/aggressive_bot.py',
                  #'opponent_bots/defensive_bot.py',
-                 #'opponent_bots/production_bot.py'
+                 'opponent_bots/production_bot.py'
                  ]
 
     maps = [71, 13, 24, 56, 7]
 
     my_bot = 'behavior_tree_bot/bt_bot.py'
-    show = False
+    #show = False
 
     results = {
         "wins" : 0,

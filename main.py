@@ -69,11 +69,12 @@ def get_node_string(node):
 # The level as a grid of tiles
 
 class Individual_Grid(object):
-    __slots__ = ["genome", "_fitness"]
+    __slots__ = ["genome", "_fitness", "_results"]
 
     def __init__(self, genome):
         self.genome = copy.deepcopy(genome)
         self._fitness = None
+        self._results = None
 
     # Update this individual's estimate of its fitness.
     # This can be expensive so we do it once and then cache the result.
@@ -90,7 +91,8 @@ class Individual_Grid(object):
             file.write(tree_string)
         results = run.run_test()
         #print("Results: ", results)
-        self._fitness = 1 + results['wins']
+        self._fitness = 10 + results['wins'] - 2 * results['crashes'] - results['timed_out']
+        self._results = results
 
         #measurements = metrics.metrics(self.to_level())
         # Print out the possible measurements or look at the implementation of metrics.py for other keys:
@@ -170,9 +172,8 @@ class Individual_Grid(object):
             current_node = node
 
             #Don't add the root, for now
-            #if current_node.parent_node != None:
-            
-            tree_list.append(current_node)
+            if current_node.parent_node != None:
+            	tree_list.append(current_node)
 
             if(isinstance(node, Sequence) or isinstance(node, Selector)):
 
@@ -196,6 +197,11 @@ class Individual_Grid(object):
             print(str(node))
         """
 
+        #If either is empty, just return copies of themselves
+        if(len(other_as_list) == 0 or len(tree_as_list) == 0):
+        	return (Individual_Grid(new_genome1),Individual_Grid(new_genome2))
+
+
         random_node = random.choice(tree_as_list)
         other_node = random.choice(other_as_list)
 
@@ -203,7 +209,7 @@ class Individual_Grid(object):
         random_node_parent = random_node.parent_node
         other_node_parent = other_node.parent_node
 
-
+        print("Parents of nodes: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
 
         if random_node_parent != None:
             #Insert into the behavior tree
@@ -211,7 +217,7 @@ class Individual_Grid(object):
 
             random_node_parent.child_nodes.remove(random_node)
             random_node_parent.child_nodes.insert(random_node_index, other_node)
-            other_node.parent = random_node_parent
+            other_node.parent_node = random_node_parent
         
 
 
@@ -221,7 +227,7 @@ class Individual_Grid(object):
 
             other_node_parent.child_nodes.remove(other_node)
             other_node_parent.child_nodes.insert(other_node_index, random_node)
-            random_node.parent = other_node_parent
+            random_node.parent_node = other_node_parent
 
 
         if random_node_parent == None:
@@ -240,6 +246,7 @@ class Individual_Grid(object):
         ##  -Damen
         #####################################################################
 
+        print("Parents of nodes2: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
 
         return (Individual_Grid(new_genome1),Individual_Grid(new_genome2))
 
@@ -374,10 +381,30 @@ def generate_successors(population):
     ##  to work properly.
     ##  -Damen
     #####################################################################
+    """
+    print("Before sort: ")
+    for pop in population:
+        print(pop.fitness())
+
+    """
 
     sorted_pop = sorted(population, key=lambda p: p.fitness())
 
+    """
+    print("After sort: ")
+    for pop in sorted_pop:
+        print(pop.fitness())
+	"""
+
+
+    #input()
     continuing_pop = sorted_pop[len(sorted_pop)//2:]
+
+    """
+    print("After cuts: ")
+    for pop in continuing_pop:
+        print(pop.fitness())
+    """
     new_children = []
     num_remaining = len(continuing_pop)
     print("There are : " + str(num_remaining) + " successors")
@@ -390,20 +417,27 @@ def generate_successors(population):
     print("Highest successor had fitness: " + str(continuing_pop[-1].fitness()))
     continuing_pop.extend(new_children)
 
-    print("After children : " + str(len(continuing_pop)))
+    #print("After children : " + str(len(continuing_pop)))
     #input()
     return continuing_pop
 
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 64
+    pop_limit = 16
 
     # Code to parallelize some computations
     batches = os.cpu_count()
+
+
+    batches = 1
+
+
     if pop_limit % batches != 0:
         print("It's ideal if pop_limit divides evenly into " + str(batches) + " batches.")
     batch_size = int(math.ceil(pop_limit / batches))
+
+
 
     with mpool.Pool(processes=os.cpu_count()) as pool:
         init_time = time.time()
@@ -464,7 +498,7 @@ def ga():
 
 
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 9)
+                stop_condition = (generation > 4)
                 if stop_condition:
                     break
 
@@ -515,11 +549,19 @@ if __name__ == "__main__":
     final_gen = sorted(ga(), key=Individual.fitness, reverse=True)
     best = final_gen[0]
     print("Best fitness: " + str(best.fitness()))
-    print("Tree looks like: " + final_gen[0].to_tree().tree_to_string())
-
+    print("Tree looks like: " + best.to_tree().tree_to_string())
 
 
     now = time.strftime("%m_%d_%H_%M_%S")
+
+
+    tree_string = get_node_string(best.to_tree())
+    #print("Tree was turned into: ", tree_string)
+    #input("GO ON?!")
+    with open("behavior_tree_bot/tree.txt", "w") as file:
+        file.write(tree_string)
+    results = run.run_test(True)
+    print("Results of best were: " + str(best._results))
 
     # STUDENT You can change this if you want to blast out the whole generation, or ten random samples, or...
 
