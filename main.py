@@ -91,7 +91,8 @@ class Individual_Grid(object):
             file.write(tree_string)
         results = run.run_test()
         #print("Results: ", results)
-        self._fitness = 10 + results['wins'] - 2 * results['crashes'] - results['timed_out']
+        #self._fitness = 10 + results['wins'] - 2 * results['crashes'] - results['timed_out']
+        self._fitness = 10 + 0.5 * results['easy_bot'] + results['spread_bot'] + results['aggressive_bot'] + results['production_bot'] - 2 * results['crashes'] - results['timed_out']
         self._results = results
 
         #measurements = metrics.metrics(self.to_level())
@@ -209,7 +210,7 @@ class Individual_Grid(object):
         random_node_parent = random_node.parent_node
         other_node_parent = other_node.parent_node
 
-        print("Parents of nodes: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
+        #print("Parents of nodes: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
 
         if random_node_parent != None:
             #Insert into the behavior tree
@@ -246,7 +247,7 @@ class Individual_Grid(object):
         ##  -Damen
         #####################################################################
 
-        print("Parents of nodes2: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
+        #print("Parents of nodes2: " + str(random_node.parent_node) + ", " + str(other_node.parent_node))
 
         return (Individual_Grid(new_genome1),Individual_Grid(new_genome2))
 
@@ -407,16 +408,36 @@ def generate_successors(population):
     """
     new_children = []
     num_remaining = len(continuing_pop)
-    print("There are : " + str(num_remaining) + " successors")
+
+
+
+    #print("There are : " + str(num_remaining) + " successors")
+
+    old_average_fitness = 0
+    for pop in sorted_pop:
+    	old_average_fitness += pop.fitness()
+    old_average_fitness /= len(sorted_pop)
+
+
     #input()
     for i in range(0, num_remaining//2):
         c1, c2 = continuing_pop[random.randint(0, num_remaining-1)].generate_children(continuing_pop[random.randint(0, num_remaining-1)])
         new_children.append(c1)
         new_children.append(c2)
 
-    print("Highest successor had fitness: " + str(continuing_pop[-1].fitness()))
-    continuing_pop.extend(new_children)
 
+
+
+    print("\n\n\n ---- NEW GENERATION ---- \n\n")    
+    print("Average fitness of last generation: " + str(old_average_fitness))
+    print("Old generation fitnesses: ")
+    for pop in sorted_pop:
+    	print(str(pop.fitness()))
+
+
+    print("Highest successor has fitness: " + str(continuing_pop[-1].fitness()))
+    print("Highest successor had results: " + str(continuing_pop[-1]._results))
+    continuing_pop.extend(new_children)
     #print("After children : " + str(len(continuing_pop)))
     #input()
     return continuing_pop
@@ -424,7 +445,7 @@ def generate_successors(population):
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 32
+    pop_limit = 16
 
     # Code to parallelize some computations
     batches = os.cpu_count()
@@ -498,7 +519,7 @@ def ga():
 
 
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 19)
+                stop_condition = (generation > 9)
                 if stop_condition:
                     break
 
