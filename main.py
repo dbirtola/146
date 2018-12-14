@@ -32,7 +32,17 @@ node_dict = {
     "i": min_ships_from_strongest_planet_to_nearest_any,
     "j": twice_min_ships_from_strongest_planet_to_nearest_enemy,
     "k": twice_min_ships_from_strongest_planet_to_nearest_neutral,
-    "l": twice_min_ships_from_strongest_planet_to_nearest_any
+    "l": twice_min_ships_from_strongest_planet_to_nearest_any,
+    "m": reinforce_my_weakest_planet,
+    "n": strongest_planet_reinforces_weakest_neighbor,
+    "o": min_attack_random_enemy_from_nearest_planet,
+    "p": half_attack_random_enemy_from_nearest_planet,
+    "q": min_attack_random_enemy_from_random_planet,
+    "r": half_attack_random_enemy_from_random_planet,
+    "s": min_attack_weakest_enemy_from_nearest_planet,
+    "t": half_attack_weakest_enemy_from_nearest_planet,
+    "u": half_attack_strongest_enemy_from_strongest_planet,
+    "v": min_attack_strongest_enemy_from_strongest_planet
 }
 
 
