@@ -105,7 +105,7 @@ class Individual_Grid(object):
 
     
         
-        self._fitness = 10 + 0.5 * results['easy_bot'] + 1.5* results['spread_bot'] + 1.7 *results['aggressive_bot'] + 0.8 * results['production_bot'] - 2 * results['crashes'] - results['timed_out'] + 0.5*results["unique_wins"]
+        self._fitness = 10 + 0.5 * results['easy_bot'] + 2* results['spread_bot'] + 2 *results['aggressive_bot'] + 0.8 * results['production_bot'] - 2 * results['crashes'] - results['timed_out'] + 0.5*results["unique_wins"]
         self._results = results
 
         #measurements = metrics.metrics(self.to_level())
@@ -397,16 +397,19 @@ def generate_successors(population):
     ##  to work properly.
     ##  -Damen
     #####################################################################
-    """
+    
     print("Before sort: ")
     for pop in population:
         print(pop.fitness())
 
     """
-
+    print("Before successors: ")
+    for child in population:
+    	print(child.to_tree().tree_to_string())
+	"""
     sorted_pop = sorted(population, key=lambda p: p.fitness())
-
     """
+    
     print("After sort: ")
     for pop in sorted_pop:
         print(pop.fitness())
@@ -453,8 +456,12 @@ def generate_successors(population):
     print("Highest successor has fitness: " + str(continuing_pop[-1].fitness()))
     print("Highest successor had results: " + str(continuing_pop[-1]._results))
     continuing_pop.extend(new_children)
+
+    print("After successors: ")
+    for child in continuing_pop:
+    	print(child.fitness())
     #print("After children : " + str(len(continuing_pop)))
-    #input()
+    input()
     return continuing_pop
 
 
@@ -473,13 +480,13 @@ def ga():
         print("It's ideal if pop_limit divides evenly into " + str(batches) + " batches.")
     batch_size = int(math.ceil(pop_limit / batches))
 
-
+    fitnesses = []
 
     with mpool.Pool(processes=os.cpu_count()) as pool:
         init_time = time.time()
 
         # STUDENT (Optional) change population initialization
-        population = [Individual.random_individual() if random.random() < 0.8
+        population = [Individual.random_individual() if random.random() <= 1
                       else Individual.empty_individual()
                       for _g in range(pop_limit)]
 
@@ -504,7 +511,7 @@ def ga():
         print("Use ctrl-c to terminate this loop manually.")
         try:
             while True:                
-                #input("\nReady for next gen?: \n")
+                input("\nReady for next gen?: \n")
                 now = time.time()
                 # Print out statistics
                 if generation > 0:
@@ -553,10 +560,22 @@ def ga():
                 population = next_population
 
 
+                generation_fitness = 0
+                for pop in population:
+                	generation_fitness += pop.fitness()
+
+                generation_fitness /= len(population)
+
+                generation_best = max(population, key=Individual.fitness)
+
+                fitnesses.append([generation_fitness, generation_best])
+
+
+
         except KeyboardInterrupt:
             pass
 
-    return population
+    return population, fitnesses
 
 
 if __name__ == "__main__":
@@ -581,8 +600,8 @@ if __name__ == "__main__":
     print("Calculated fitness: ", test_indiv.fitness())
     input()
     """
-
-    final_gen = sorted(ga(), key=Individual.fitness, reverse=True)
+    results = ga()
+    final_gen = sorted(results[0], key=Individual.fitness, reverse=True)
     best = final_gen[0]
     print("Best fitness: " + str(best.fitness()))
     print("Tree looks like: " + best.to_tree().tree_to_string())
@@ -597,18 +616,21 @@ if __name__ == "__main__":
     print("--Testing against all 100 maps--")
     with open("behavior_tree_bot/tree.txt", "w") as file:
         file.write(tree_string)
-    results_100 = run.run_test(False, True)
+    #results_100 = run.run_test(False, True)
     print("--Finished test against all 100 maps--")
 
     best_win_percent = best._results["win_percentage"]
-    best_win_percent_100 = results_100["win_percentage"]
-    print("Results of best during generation were: [" + str(best_win_percent) + "] " + str(best._results))
-    print("Results of best against all 100 maps: " + str(results_100))
+    #best_win_percent_100 = results_100["win_percentage"]
+    #print("Results of best during generation were: [" + str(best_win_percent) + "] " + str(best._results))
+    #print("Results of best against all 100 maps: " + str(results_100))
     print("Fitness of best was: " + str(best.fitness()))
     print("Tree of best was: \n" + str(best.to_tree().tree_to_string()))
-    
+    print("Fitnesses of each generation")
+    for i in range(0, len(results[1])):
+    	print("Generation " + str((i + 1)) + ": Average = [" + str(results[1][i][0]) + "] Best = [" + str(results[1][i][1].fitness()) + "]")
 
-    
+
+
     #print("Tree was turned into: ", tree_string)
     #input("GO ON?!")
     with open("behavior_tree_bot/tree.txt", "w") as file:

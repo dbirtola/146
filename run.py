@@ -143,8 +143,8 @@ def run_test(show = False, all = False):
                 # use this command if you just want the results of the matches reported
                 add_results(results, test(my_bot, opponent, map))
 
-    
-    results["win_percentage"] = results["wins"]/((float(results["wins"]) + results["losses"]))
+    if(results["losses"] != 0 or results["wins"] != 0):
+        results["win_percentage"] = results["wins"]/((float(results["wins"]) + results["losses"]))
 
     games = 100 if all else 5
     results["easy_bot"] /= games
