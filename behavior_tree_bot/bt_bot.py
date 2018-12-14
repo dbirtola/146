@@ -31,7 +31,7 @@ node_dict = {
     "d": twice_min_ships_from_my_strongest_planet_to_weakest_enemy,
     "e": half_ships_from_my_strongest_planet_to_weakest_enemy,
     "f": strongest_planet_spreads_to_weakest_neutral_planet,
-    "g": min_ships_from_strongest_planet_to_nearest_enemy,
+    #"g": min_ships_from_strongest_planet_to_nearest_enemy,
     "h": min_ships_from_strongest_planet_to_nearest_neutral,
     "i": min_ships_from_strongest_planet_to_nearest_any,
     "j": twice_min_ships_from_strongest_planet_to_nearest_enemy,

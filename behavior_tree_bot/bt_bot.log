@@ -1,14 +1,35 @@
 INFO:root:
  Decoded tree as: Selector: Root
 | Selector: Selector
+| | Action: min_ships_from_my_strongest_planet_to_weakest_enemy
 | | Action: spread_to_weakest_neutral_planet
-| | Action: attack_weakest_enemy_planet
-| | Check: if_neutral_planet_available
+| | Sequence: Sequence
+| | | Sequence: Sequence
+| | | | Action: twice_min_ships_from_strongest_planet_to_nearest_any
+| | | | Sequence: Sequence
+| | | | | Sequence: Sequence
+| | | | | | Action: twice_min_ships_from_strongest_planet_to_nearest_any
+| | | | | | Action: twice_min_ships_from_strongest_planet_to_nearest_enemy
+| | | | | | Action: min_ships_from_strongest_planet_to_nearest_neutral
+| | | | | Action: twice_min_ships_from_my_strongest_planet_to_weakest_enemy
+| | | | | Action: min_ships_from_strongest_planet_to_nearest_any
+| | | | | Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+| | | | Action: min_ships_from_strongest_planet_to_nearest_neutral
+| | | Action: twice_min_ships_from_my_strongest_planet_to_weakest_enemy
+| | | Action: min_ships_from_strongest_planet_to_nearest_any
+| | | Sequence: Sequence
+| | | | Check: still_targets_left
+| | | | Action: twice_min_ships_from_strongest_planet_to_nearest_any
+| | | | Action: half_ships_from_my_strongest_planet_to_weakest_enemy
+| | | | Action: spread_to_weakest_neutral_planet
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 100.0 171.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:1 13 50.0
+DEBUG:root:Order:1 9 50.0
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
@@ -16,80 +37,198 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 55.0 85.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:1 10 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 11.0 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 16.0 81.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 16.0 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 21.0 77.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 21.0 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 26.0 78.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 26.0 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 31.0 79.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 31.0 44.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 43.0 67.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 43.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 47.0 63.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:1 14 42.5
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 47.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 51.0 68.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 51.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 55.0 64.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 55.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 59.0 69.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 59.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 63.0 74.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Order:10 17 31.5
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
@@ -97,1420 +236,766 @@ DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:1 5 69.0
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:13 3 56.0
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:1 8 82.0
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:13 21 58.0
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Order:1 12 96.0
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Success
-DEBUG:root:Result: Selector: Selector -> Success
-DEBUG:root:Result: Selector: Root -> Success
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 66.0 94.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:1 13 30.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:9 49.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:3 19 112.5
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:9 12 30.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:14 20 119.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:1 14 17.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:1 8 123.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:10 18 28.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:3 19 109.0
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:1 7 8.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:9 39.0 49.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:9 39.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:9 43.0 54.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:9 43.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
-DEBUG:root:Result: Selector: Selector -> Failure
-DEBUG:root:Result: Selector: Root -> Failure
-DEBUG:root:Finish turn
-
-DEBUG:root:Executing:Selector: Root
-DEBUG:root:Executing:Selector: Selector
-DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
-DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Order:19 3 46.5
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Success
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:9 11 28.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
 DEBUG:root:Result: Selector: Selector -> Success
 DEBUG:root:Result: Selector: Root -> Success
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 51.0 84.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:1 7 24.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:10 40.0 68.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:10 15 11.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 37.0 94.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 37.0 52.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 42.0 81.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 42.0 58.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 47.0 86.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 47.0 98.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:1 16 26.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:10 53.0 81.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:10 16 52.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:9 16 28.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_enemy
+DEBUG:root:Bad order:1 31.0 58.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_enemy -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 36.0 101.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 36.0 64.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 41.0 82.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 41.0 70.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 46.0 87.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 46.0 88.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 51.0 92.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 51.0 92.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 56.0 97.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 56.0 96.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:1 61.0 92.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 61.0 184.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn
 
 DEBUG:root:Executing:Selector: Root
 DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:16 2 62.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
 DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
 DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
-DEBUG:root:Executing:Action: attack_weakest_enemy_planet
-DEBUG:root:Result: Action: attack_weakest_enemy_planet -> Failure
-DEBUG:root:Executing:Check: if_neutral_planet_available
-DEBUG:root:Result: Check: if_neutral_planet_available -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 71.0 204.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 76.0 214.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 81.0 174.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:1 14 17.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:1 12 38.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:9 71.0 84.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:9 14 28.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:16 14 32.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_enemy
+DEBUG:root:Order:10 14 32.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_enemy -> Success
+DEBUG:root:Executing:Action: min_ships_from_strongest_planet_to_nearest_neutral
+DEBUG:root:Bad order:17 52.0 176.0
+DEBUG:root:Result: Action: min_ships_from_strongest_planet_to_nearest_neutral -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:17 14 52.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:15 14 28.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_enemy
+DEBUG:root:Order:1 14 42.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_enemy -> Success
+DEBUG:root:Executing:Action: min_ships_from_strongest_planet_to_nearest_neutral
+DEBUG:root:Bad order:9 51.0 156.0
+DEBUG:root:Result: Action: min_ships_from_strongest_planet_to_nearest_neutral -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:9 14 32.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:2 14 26.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_enemy
+DEBUG:root:Order:16 14 36.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_enemy -> Success
+DEBUG:root:Executing:Action: min_ships_from_strongest_planet_to_nearest_neutral
+DEBUG:root:Bad order:13 37.0 164.0
+DEBUG:root:Result: Action: min_ships_from_strongest_planet_to_nearest_neutral -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:13 38.0 52.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:10 14 40.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:13 39.0 54.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:2 14 32.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:13 40.0 56.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Bad order:13 41.0 42.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:13 41.0 58.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Order:9 18 30.0
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Success
+DEBUG:root:Result: Selector: Selector -> Success
+DEBUG:root:Result: Selector: Root -> Success
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:15 45.0 52.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:14 18 32.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 49.0 80.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 54.0 84.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:14 169.0 208.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:14 187.0 208.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:14 204.0 208.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:14 205.0 208.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Selector: Selector -> Failure
+DEBUG:root:Result: Selector: Root -> Failure
+DEBUG:root:Finish turn
+
+DEBUG:root:Executing:Selector: Root
+DEBUG:root:Executing:Selector: Selector
+DEBUG:root:Executing:Action: min_ships_from_my_strongest_planet_to_weakest_enemy
+DEBUG:root:Result: Action: min_ships_from_my_strongest_planet_to_weakest_enemy -> Failure
+DEBUG:root:Executing:Action: spread_to_weakest_neutral_planet
+DEBUG:root:Result: Action: spread_to_weakest_neutral_planet -> Failure
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Order:14 5 208.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Success
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Sequence: Sequence
+DEBUG:root:Executing:Action: twice_min_ships_from_strongest_planet_to_nearest_any
+DEBUG:root:Bad order:1 79.0 174.0
+DEBUG:root:Result: Action: twice_min_ships_from_strongest_planet_to_nearest_any -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
+DEBUG:root:Result: Sequence: Sequence -> Failure
 DEBUG:root:Result: Selector: Selector -> Failure
 DEBUG:root:Result: Selector: Root -> Failure
 DEBUG:root:Finish turn

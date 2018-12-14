@@ -61,18 +61,24 @@ def test(bot, opponent_bot, map_num):
             break
 
     results = {
-        "wins" : wins,
-        "losses" : losses,
-        "crashes" : crashes,
-        "timed_out": timed_out,
+        "wins" : 0,
+        "losses" : 0,
+        "crashes" : 0,
+        "timed_out": 0,
         "easy_bot": 0,
         "spread_bot": 0,
         "aggressive_bot": 0,
         "defensive_bot": 0,
-        "production_bot": 0
+        "production_bot": 0,
+        "win_percentage": 0,
+        "unique_wins": 0
     }
 
     results[opponent_name] = wins
+    results["wins"] = wins
+    results["losses"] = losses
+    #results["wins"] += wins
+    p.kill()
     return results
 
 
@@ -87,7 +93,7 @@ def add_results(r1, r2):
         r1[key] += r2[key]
 
 
-def run_test(show = False):
+def run_test(show = False, all = False):
     results = {
         "wins" : 0,
         "losses" : 0,
@@ -97,11 +103,16 @@ def run_test(show = False):
         "spread_bot": 0,
         "aggressive_bot": 0,
         "defensive_bot": 0,
-        "production_bot": 0
-    }  
+        "production_bot": 0,
+        "win_percentage": 0,
+        "unique_wins": 0
+    }
+    
     #Run sim 3 times, to likely test the bot against each opponent on 3 randomized maps, lessening the chance
     #that randomly generated bots will just beat all 4 at the end and be picked as a good tree
-    for i in range(0, 5):
+    #number_runs = 100 if all else 5
+    runs = range(1, 101) if all else range(0, 5)
+    for i in runs:
         path =  os.getcwd()
         opponents = ['opponent_bots/easy_bot.py',
                      'opponent_bots/spread_bot.py',
@@ -113,8 +124,11 @@ def run_test(show = False):
         #maps = [71, 13, 24, 56, 7]
         maps = []
 
-        for i in range(0, 5):
-            maps.append(random.randint(0, 100))
+        if all == True:
+            maps = [i, i, i, i, i]
+        else:
+            for i in range(0, 5):
+                maps.append(random.randint(1, 100))
 
         my_bot = 'behavior_tree_bot/bt_bot.py'
         #show = False
@@ -128,6 +142,26 @@ def run_test(show = False):
             else:
                 # use this command if you just want the results of the matches reported
                 add_results(results, test(my_bot, opponent, map))
+
+    
+    results["win_percentage"] = results["wins"]/((float(results["wins"]) + results["losses"]))
+
+    games = 100 if all else 5
+    results["easy_bot"] /= games
+    results["aggressive_bot"] /= games
+    results["production_bot"] /= games
+    results["spread_bot"] /= games
+
+    unique_wins = 0
+    if results["easy_bot"] != 0:
+        unique_wins += 1
+    if results["aggressive_bot"] != 0:
+        unique_wins += 1
+    if results["spread_bot"] != 0:
+        unique_wins += 1
+    if results["production_bot"] != 0:
+        unique_wins += 1
+    results["unique_wins"] = unique_wins
     return results
     
 

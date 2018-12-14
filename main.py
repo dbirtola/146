@@ -27,7 +27,7 @@ node_dict = {
     "d": twice_min_ships_from_my_strongest_planet_to_weakest_enemy,
     "e": half_ships_from_my_strongest_planet_to_weakest_enemy,
     "f": strongest_planet_spreads_to_weakest_neutral_planet,
-    "g": min_ships_from_strongest_planet_to_nearest_enemy,
+    #"g": min_ships_from_strongest_planet_to_nearest_enemy,
     "h": min_ships_from_strongest_planet_to_nearest_neutral,
     "i": min_ships_from_strongest_planet_to_nearest_any,
     "j": twice_min_ships_from_strongest_planet_to_nearest_enemy,
@@ -92,7 +92,10 @@ class Individual_Grid(object):
         results = run.run_test()
         #print("Results: ", results)
         #self._fitness = 10 + results['wins'] - 2 * results['crashes'] - results['timed_out']
-        self._fitness = 10 + 0.5 * results['easy_bot'] + results['spread_bot'] + results['aggressive_bot'] + results['production_bot'] - 2 * results['crashes'] - results['timed_out']
+
+    
+        
+        self._fitness = 10 + 0.5 * results['easy_bot'] + 1.5* results['spread_bot'] + 1.7 *results['aggressive_bot'] + 0.8 * results['production_bot'] - 2 * results['crashes'] - results['timed_out'] + 0.5*results["unique_wins"]
         self._results = results
 
         #measurements = metrics.metrics(self.to_level())
@@ -310,14 +313,17 @@ class Individual_Grid(object):
         return cls(g)
 
 def generate_tree(root):
-    num_children = random.randint(2, 4)
+    num_children = random.randint(2, 5)
     while True:
 
-        new_class = random.choice(list(node_dict.items()))
+        is_composite = random.randint(0, 100) < 10
+        if is_composite:
+            new_class = ["-", Selector] if random.randint(0, 2) == 0 else ["_", Sequence]
+        else:
+            new_class = random.choice(list(node_dict.items()))
 
         if new_class[1] == Selector:
-            #if random.randint(0, 10) < 8:
-            #    continue;
+
             new_node = Selector(name = "Selector")
             new_node.child_nodes = []
             new_root = generate_tree(new_node)
@@ -325,8 +331,7 @@ def generate_tree(root):
             root.child_nodes.append(new_root)
 
         elif new_class[1] == Sequence:            
-            #if random.randint(0, 10) < 8:
-            #    continue;
+
             new_node = Sequence(name = "Sequence")
             new_node.child_nodes = []
             new_root = generate_tree(new_node)
@@ -445,7 +450,7 @@ def generate_successors(population):
 
 def ga():
     # STUDENT Feel free to play with this parameter
-    pop_limit = 16
+    pop_limit = 4
 
     # Code to parallelize some computations
     batches = os.cpu_count()
@@ -519,7 +524,7 @@ def ga():
 
 
                 # STUDENT Determine stopping condition
-                stop_condition = (generation > 9)
+                stop_condition = (generation > 4)
                 if stop_condition:
                     break
 
@@ -577,12 +582,30 @@ if __name__ == "__main__":
 
 
     tree_string = get_node_string(best.to_tree())
+
+
+    print("--Testing against all 100 maps--")
+    with open("behavior_tree_bot/tree.txt", "w") as file:
+        file.write(tree_string)
+    results_100 = run.run_test(False, True)
+    print("--Finished test against all 100 maps--")
+
+    best_win_percent = best._results["win_percentage"]
+    best_win_percent_100 = results_100["win_percentage"]
+    print("Results of best during generation were: [" + str(best_win_percent) + "] " + str(best._results))
+    print("Results of best against all 100 maps: " + str(results_100))
+    print("Fitness of best was: " + str(best.fitness()))
+    print("Tree of best was: \n" + str(best.to_tree().tree_to_string()))
+    
+
+    
     #print("Tree was turned into: ", tree_string)
     #input("GO ON?!")
     with open("behavior_tree_bot/tree.txt", "w") as file:
         file.write(tree_string)
-    results = run.run_test(True)
-    print("Results of best were: " + str(best._results))
+
+    
+    #results = run.run_test(True)
 
     # STUDENT You can change this if you want to blast out the whole generation, or ten random samples, or...
 
